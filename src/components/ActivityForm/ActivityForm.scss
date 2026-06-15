@@ -1,0 +1,113 @@
+@use "../../styles/globals" as *;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: $color-backdrop;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-modal;
+  padding: $space-16;
+}
+
+.activity-form {
+  background: $color-bg;
+  border-radius: $radius-xl;
+  padding: $space-20;
+  width: 100%;
+  max-width: $form-max-width;
+  box-shadow: $shadow-modal;
+
+  &__heading {
+    margin: 0 0 $space-16;
+    font-size: $fs-lg;
+  }
+
+  &__error {
+    color: $color-danger;
+    font-size: $fs-error;
+    margin: 0 0 $space-12;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-8;
+
+    .spacer {
+      flex: 1;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  margin-bottom: $space-12;
+  font-size: $fs-md;
+
+  > span,
+  legend {
+    color: $color-muted;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    padding: $space-8;
+    border: 1px solid $color-grid-line;
+    border-radius: $radius-md;
+  }
+}
+
+.field-row {
+  display: flex;
+  gap: $space-12;
+
+  .field {
+    flex: 1;
+  }
+}
+
+.swatches {
+  flex-direction: row;
+  align-items: center;
+  gap: $space-8;
+  border: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: $swatch-size;
+  height: $swatch-size;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &--active {
+    border-color: $color-text;
+  }
+}
+
+.btn {
+  font: inherit;
+  padding: $space-8 $space-14;
+  border-radius: $radius-lg;
+  border: 1px solid $color-grid-line;
+  background: $color-bg;
+  cursor: pointer;
+
+  &--primary {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: $color-on-color;
+  }
+
+  &--danger {
+    border-color: $color-danger-border;
+    color: $color-danger;
+  }
+}

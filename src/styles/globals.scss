@@ -1,0 +1,84 @@
+// Global design tokens for Simple Agenda.
+// Variables only — no CSS output here, so this is safe to `@use` from every
+// component stylesheet without duplicating rules. Base resets and the runtime
+// CSS custom properties live in base.scss.
+
+// ===== Colors =====
+$color-bg: #fff;
+$color-text: #1f2933;
+$color-muted: #6b7280;
+$color-grid-line: #e4e7eb;
+$color-track-bg: #f5f6f8;
+$color-today-bg: #eef4ff;
+$color-day-num: #8b1a1a; // dark red
+$color-now-line: #ef4444;
+$color-primary: #2563eb;
+$color-danger: #dc2626;
+$color-danger-border: #fca5a5;
+$color-on-color: #fff; // text on colored bars / primary button
+$color-hint-bg: #fafafa;
+$color-hint-text: #1e1e1e;
+$color-backdrop: rgba(15, 23, 42, 0.4);
+
+// ===== Font =====
+$font-family: -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter",
+  "Segoe UI", Roboto, system-ui, sans-serif;
+
+// ===== Font sizes =====
+$fs-xs: 0.7rem;
+$fs-weekday: 0.72rem;
+$fs-sm: 0.75rem;
+$fs-error: 0.8rem;
+$fs-md: 0.85rem;
+$fs-base: 1rem;
+$fs-lg: 1.1rem;
+$fs-xl: 1.25rem;
+$fs-daynum: 1.35rem;
+
+// ===== Font weights =====
+$fw-medium: 500;
+$fw-semibold: 600;
+
+// ===== Spacing scale =====
+$space-2: 2px;
+$space-4: 4px;
+$space-6: 6px;
+$space-8: 8px;
+$space-10: 10px;
+$space-12: 12px;
+$space-14: 14px;
+$space-16: 16px;
+$space-20: 20px;
+$space-48: 48px;
+
+// ===== Layout dimensions =====
+$label-width: 84px;
+$label-width-mobile: 64px;
+$bar-height: 40px;
+$bar-min-width: 24px;
+$hour-axis-height: 18px;
+$header-offset: 64px; // sticky offset for the hour axis below the header
+$nav-btn-size: 36px;
+$month-title-min-width: 180px;
+$form-max-width: 420px;
+$app-max-width: 1100px;
+$swatch-size: 24px;
+$breakpoint-mobile: 640px;
+
+// ===== Radii =====
+$radius-sm: 5px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+
+// ===== Effects =====
+$shadow: 0 1px 3px rgba(15, 23, 42, 0.22), 0 1px 2px rgba(15, 23, 42, 0.12);
+$shadow-modal: 0 12px 40px rgba(0, 0, 0, 0.2);
+
+// ===== Z-index =====
+$z-bar: 1;
+$z-now-line: 3;
+$z-header: 5;
+$z-axis: 4;
+$z-modal: 10;
+$z-hint: 20;

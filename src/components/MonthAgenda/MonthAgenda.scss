@@ -1,0 +1,12 @@
+@use "../../styles/globals" as *;
+
+// Single thin bar spanning all rows of the current month at the current time.
+.now-line-global {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: $color-now-line;
+  z-index: $z-now-line;
+  pointer-events: none;
+}

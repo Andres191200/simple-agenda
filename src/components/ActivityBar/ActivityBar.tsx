@@ -1,8 +1,9 @@
-import type { Activity } from "../types";
-import { dayFraction } from "../lib/time";
-import { barGradient } from "../lib/color";
+import type { Activity } from "../../types";
+import { dayFraction } from "../../lib/time";
+import { barGradient } from "../../lib/color";
+import "./ActivityBar.scss";
 
-const BAR_HEIGHT = 40; // px, must match --bar-height in styles.css
+const BAR_HEIGHT = 40; // px, must match $bar-height in styles/globals.scss
 const SUB_ROW_GAP = 6; // px
 
 interface Props {

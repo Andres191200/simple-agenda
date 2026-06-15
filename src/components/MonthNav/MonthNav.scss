@@ -1,0 +1,30 @@
+@use "../../styles/globals" as *;
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-16;
+  padding: $space-8 0 $space-12;
+
+  &__title {
+    font-size: $fs-xl;
+    margin: 0;
+    min-width: $month-title-min-width;
+    text-align: center;
+  }
+
+  &__btn {
+    border: 1px solid $color-grid-line;
+    background: $color-bg;
+    border-radius: $radius-lg;
+    width: $nav-btn-size;
+    height: $nav-btn-size;
+    font-size: $fs-base;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-track-bg;
+    }
+  }
+}

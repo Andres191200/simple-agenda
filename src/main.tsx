@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "@fontsource-variable/inter";
 import App from "./App";
 import { StoreProvider } from "./store";
-import "./styles.css";
+import "./styles/base.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

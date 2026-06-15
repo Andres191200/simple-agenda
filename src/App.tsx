@@ -5,6 +5,7 @@ import type { Activity } from "./types";
 import { MonthNav } from "./components/MonthNav";
 import { MonthAgenda } from "./components/MonthAgenda";
 import { ActivityForm, type FormTarget } from "./components/ActivityForm";
+import "./App.scss";
 
 export default function App() {
   const {

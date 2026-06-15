@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./HourAxis.scss";
 
 const FULL_LABELS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
 const MOBILE_BREAKPOINT = 640; // px
