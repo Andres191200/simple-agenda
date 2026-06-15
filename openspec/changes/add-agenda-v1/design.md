@@ -49,7 +49,7 @@ A single source of truth (React context or a tiny store such as `useReducer`/Zus
 - **Alternatives considered:** IndexedDB (more capacity but heavier API; unnecessary at v1 data volumes); per-activity keys (complicates atomic reads). One JSON blob under a versioned key is simplest and easy to migrate later.
 
 ### D7 — Today affordances scoped to current month
-The now-line and auto-scroll only apply when the selected month is the current calendar month; the now-line position is `minutesFromMidnight(now)/1440`. A lightweight timer (e.g. update each minute) keeps the line current. Today's row gets a highlight class regardless of scroll.
+The now-line and auto-scroll only apply when the selected month is the current calendar month; the now-line position is `minutesFromMidnight(now)/1440`. A lightweight timer (e.g. update each minute) keeps the line current. Today's row gets a highlight class regardless of scroll. The now-line is rendered once as a **global overlay spanning all day-rows** (positioned over the rows container at `left: calc(var(--label-width) + (100% - var(--label-width)) * fraction)`), not as a per-row element — since the time-of-day axis is identical for every row, a single continuous line reads better than one confined to today's row.
 
 ### D8 — Tooling: Vite + React + TypeScript
 Vite for fast dev/build, React + TypeScript for the app. No UI framework dependency required for v1; plain CSS (or CSS modules) suffices for the layout. Keeps the dependency surface minimal.

@@ -49,12 +49,12 @@ When activities in the same day overlap in time, the system SHALL place overlapp
 
 ### Requirement: Today indicators
 
-The system SHALL visually highlight today's row and, while the current month is displayed, SHALL draw a red 1px vertical line on today's row at the current time of day. When the current month is first displayed, the view SHALL auto-scroll to today's row.
+The system SHALL visually highlight today's row and, while the current month is displayed, SHALL draw a single red 1px vertical line spanning all day-rows at the horizontal position corresponding to the current time of day. When the current month is first displayed, the view SHALL auto-scroll to today's row.
 
-#### Scenario: Now-line on today
+#### Scenario: Now-line spans all rows
 
 - **WHEN** the current month is displayed
-- **THEN** today's row shows a red 1px vertical line at the horizontal position corresponding to the current time
+- **THEN** a single red 1px vertical line is drawn at the horizontal position corresponding to the current time, spanning across all day-rows (not confined to today's row)
 
 #### Scenario: No now-line in other months
 

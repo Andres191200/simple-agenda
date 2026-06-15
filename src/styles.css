@@ -1,0 +1,290 @@
+:root {
+  --label-width: 84px;
+  --bar-height: 40px;
+  --bar-min-width: 24px;
+  --track-bg: #f5f6f8;
+  --grid-line: #e4e7eb;
+  --today-bg: #eef4ff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --day-num-color: #8b1a1a; /* dark red */
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.22), 0 1px 2px rgba(15, 23, 42, 0.12);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter Variable", "Inter",
+    "Segoe UI", Roboto, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+.app__header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 5;
+  padding-top: 12px;
+}
+
+/* Month navigation -------------------------------------------------------- */
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 0 12px;
+}
+
+.month-nav__title {
+  font-size: 1.25rem;
+  margin: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.month-nav__btn {
+  border: 1px solid var(--grid-line);
+  background: #fff;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.month-nav__btn:hover {
+  background: var(--track-bg);
+}
+
+/* Hour axis --------------------------------------------------------------- */
+.hour-axis {
+  display: flex;
+  position: sticky;
+  top: 64px;
+  background: #fff;
+  z-index: 4;
+  padding-bottom: 4px;
+}
+.hour-axis__spacer {
+  width: var(--label-width);
+  flex: none;
+}
+.hour-axis__track {
+  position: relative;
+  flex: 1;
+  height: 18px;
+}
+.hour-axis__label {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.hour-axis__label:first-child {
+  transform: translateX(0);
+}
+.hour-axis__label:last-child {
+  transform: translateX(-100%);
+}
+
+/* Day rows ---------------------------------------------------------------- */
+.agenda__rows {
+  position: relative;
+}
+.day-row {
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid var(--grid-line);
+}
+.day-row--today {
+  background: var(--today-bg);
+}
+.day-row__label {
+  width: var(--label-width);
+  flex: none;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+}
+.day-row__weekday {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.day-row__daynum {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--day-num-color);
+  line-height: 1;
+}
+.day-row__track {
+  position: relative;
+  flex: 1;
+  margin: 10px 0;
+  background: var(--track-bg);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Now line — a single thin bar spanning all rows of the current month ------ */
+.now-line-global {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ef4444;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Activity bars ----------------------------------------------------------- */
+.activity-bar {
+  position: absolute;
+  height: var(--bar-height);
+  min-width: var(--bar-min-width);
+  border: none;
+  border-radius: 5px;
+  padding: 0 6px;
+  color: #fff;
+  font-size: 0.75rem;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: var(--shadow);
+}
+.activity-bar:hover {
+  filter: brightness(0.95);
+}
+.activity-bar__label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: var(--bar-height);
+}
+.activity-bar__range {
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+/* Activity form (modal) --------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 16px;
+}
+.activity-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+.activity-form__heading {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+.field > span,
+.field legend {
+  color: var(--muted);
+}
+.field input,
+.field textarea {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--grid-line);
+  border-radius: 6px;
+}
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+.field-row .field {
+  flex: 1;
+}
+.swatches {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.swatch--active {
+  border-color: var(--text);
+}
+.activity-form__error {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin: 0 0 12px;
+}
+.activity-form__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.activity-form__actions .spacer {
+  flex: 1;
+}
+.btn {
+  font: inherit;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--grid-line);
+  background: #fff;
+  cursor: pointer;
+}
+.btn--primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+.btn--danger {
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --label-width: 64px;
+  }
+}
