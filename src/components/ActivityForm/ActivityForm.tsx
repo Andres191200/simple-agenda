@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ACTIVITY_COLORS, type Activity } from "../types";
-import { validateDraft } from "../lib/validation";
+import { ACTIVITY_COLORS, type Activity } from "../../types";
+import { validateDraft } from "../../lib/validation";
+import "./ActivityForm.scss";
 
 /**
  * What the form was opened with: either an existing activity (edit mode) or a

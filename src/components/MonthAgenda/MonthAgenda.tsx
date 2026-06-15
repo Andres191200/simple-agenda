@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useRef } from "react";
-import type { Activity } from "../types";
-import type { MonthCursor } from "../store";
+import type { Activity } from "../../types";
+import type { MonthCursor } from "../../store";
 import {
   daysInMonth,
   toDayKey,
   dayFractionFromDate,
-} from "../lib/time";
-import { DayRow } from "./DayRow";
-import { HourAxis } from "./HourAxis";
+} from "../../lib/time";
+import { DayRow } from "../DayRow";
+import { HourAxis } from "../HourAxis";
+import { AgendaRows } from "../AgendaRows";
+import "./MonthAgenda.scss";
 
 interface Props {
   cursor: MonthCursor;
@@ -61,7 +63,7 @@ export function MonthAgenda({
   return (
     <div className="agenda">
       <HourAxis />
-      <div className="agenda__rows">
+      <AgendaRows>
         {/* Single global now-line spanning all rows, current month only. */}
         {isCurrentMonth && (
           <div
@@ -86,7 +88,7 @@ export function MonthAgenda({
             />
           );
         })}
-      </div>
+      </AgendaRows>
     </div>
   );
 }

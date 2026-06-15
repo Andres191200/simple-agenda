@@ -1,5 +1,6 @@
-import { monthTitle } from "../lib/time";
-import type { MonthCursor } from "../store";
+import { monthTitle } from "../../lib/time";
+import type { MonthCursor } from "../../store";
+import "./MonthNav.scss";
 
 interface Props {
   cursor: MonthCursor;

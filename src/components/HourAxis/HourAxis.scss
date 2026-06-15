@@ -1,0 +1,37 @@
+@use "../../styles/globals" as *;
+
+.hour-axis {
+  display: flex;
+  position: sticky;
+  top: $header-offset;
+  background: $color-bg;
+  z-index: $z-axis;
+  padding-bottom: $space-4;
+
+  &__spacer {
+    width: var(--label-width);
+    flex: none;
+  }
+
+  &__track {
+    position: relative;
+    flex: 1;
+    height: $hour-axis-height;
+  }
+
+  &__label {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: $fs-xs;
+    color: $color-muted;
+    white-space: nowrap;
+
+    &:first-child {
+      transform: translateX(0);
+    }
+
+    &:last-child {
+      transform: translateX(-100%);
+    }
+  }
+}

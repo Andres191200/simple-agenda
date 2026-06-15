@@ -1,8 +1,9 @@
 import { forwardRef } from "react";
-import type { Activity } from "../types";
-import { dayParts } from "../lib/time";
-import { packDay } from "../lib/packing";
-import { ActivityBar, BAR_HEIGHT, SUB_ROW_GAP } from "./ActivityBar";
+import type { Activity } from "../../types";
+import { dayParts } from "../../lib/time";
+import { packDay } from "../../lib/packing";
+import { ActivityBar, BAR_HEIGHT, SUB_ROW_GAP } from "../ActivityBar";
+import "./DayRow.scss";
 
 interface Props {
   dayKey: string;

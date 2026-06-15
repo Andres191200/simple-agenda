@@ -1,0 +1,21 @@
+@use "../../styles/globals" as *;
+
+.agenda__rows {
+  position: relative;
+}
+
+// Cursor-following "New activity" hint shown over empty track space.
+.hover-hint {
+  position: fixed;
+  transform: translate($space-14, $space-14);
+  background: $color-hint-bg;
+  color: $color-hint-text;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  padding: $space-8 $space-16;
+  border-radius: $radius-md;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: $z-hint;
+  box-shadow: $shadow;
+}

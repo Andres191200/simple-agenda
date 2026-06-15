@@ -1,0 +1,15 @@
+@use "./styles/globals" as *;
+
+.app {
+  max-width: $app-max-width;
+  margin: 0 auto;
+  padding: 0 $space-16 $space-48;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    background: $color-bg;
+    z-index: $z-header;
+    padding-top: $space-12;
+  }
+}

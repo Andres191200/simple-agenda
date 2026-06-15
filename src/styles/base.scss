@@ -1,0 +1,30 @@
+@use "globals" as *;
+
+// Runtime CSS custom properties. Only values needed at runtime live here —
+// notably --label-width, which the now-line's inline calc() reads and which
+// shrinks on mobile.
+:root {
+  --label-width: #{$label-width};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: $color-bg;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  :root {
+    --label-width: #{$label-width-mobile};
+  }
+}
